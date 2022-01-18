@@ -33,29 +33,31 @@ The results show that these two modules will deteriorate performance of DoA esti
 
 - PyCharm Community 2018.3.2
 
-- CUDA 11
+- CUDA 10.0
+
+- NVIDIA GeForce RTX2080
+  
+- Two Intel Xeon E5-2678v3 @2.50GHz CPUs and 128GB RAM
 
 # Requirements
 
 - h5py 2.10.0
 
-- numpy 1.19.5
+- numpy 1.19.3
 
-- tensorflow-gpu 2.4.0
+- tensorflow-gpu 1.13.1
 
-- matplotlib 3.3.3
-
-- pandas 1.2.4
 # File description
 - yolovdoa_train.py -- Data preprocessing, model training, trained model storage function
 
-- yolovdoa.py -- main function of YOLO-DoA, including Neck, Head sturcture, and loss calculation
-- utils.py -- auxiliary function, including postprocess of predicted boxes,soft-NMS
+- yolovdoa.py -- Main function of YOLO-DoA, including Neck, Head sturcture, and loss calculation
+- utils.py -- Auxiliary function, including postprocess of predicted boxes,soft-NMS
 - computationcost.py-- Parameter statistics and calculation statistics function
-- common.py -- implementation functions of CBL and Ups
+- common.py -- Implementation functions of CBL and Ups
 - backbone.py -- Backbone of YOLO-DoA
 # Contact
 Issues should be raised directly in the repository. For professional support requests please email Rong Fan at fanrong@cafuc.edu.cn.
+
   
   
   
