@@ -20,7 +20,7 @@ TABLE I: The effectiveness study of YOLO-DoA. MPS represents mini-batch per seco
 
 Through steps A → F, the construction of YOLO-DoA is completed. Compared to YOLO-Basic, both the parameters and computational cost of YOLO-DoA are reduced by 99.6%.
 Meanwhile, the prediction speed is increased by a factor of 4.6 and RMSE is decreased obviously. Therefore, the effectiveness
-of YOLO-DoA is confirmed.Moreover, the Spatial Pyramid Pooling(SPP) and Grid Sensitive are additionally tested in the experiment. 
+of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooling(SPP) layer and  are additionally tested in the experiment. 
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
 
 # Updates
