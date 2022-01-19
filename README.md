@@ -49,11 +49,10 @@ The results show that these two modules will deteriorate performance of DoA esti
 
 # File description
 - yolovdoa_train.py -- Data preprocessing, model training, trained model storage function
-
 - yolovdoa.py -- Main function of YOLO-DoA, including Neck, Head sturcture, and loss calculation
-- utils.py -- Auxiliary function, including postprocess of predicted boxes,soft-NMS
+- tools.py -- Auxiliary function, including postprocess of predicted boxes,soft-NMS
 - computationcost.py-- Parameter statistics and calculation statistics function
-- common.py -- Implementation functions of CBL and Ups
+- modules.py -- Implementation functions of CBL and Ups
 - backbone.py -- Backbone of YOLO-DoA
 # Contact
 Issues should be raised directly in the repository. For professional support requests please email Rong Fan at fanrong@cafuc.edu.cn.
