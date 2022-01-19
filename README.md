@@ -24,8 +24,8 @@ of YOLO-DoA is confirmed.Moreover, the Spatial Pyramid Pooling(SPP) and Grid Sen
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
 
 # Updates
-- 【2022/01/18】We upload the source code of YOLO-DoA model
-- 【2022/01/19】We upload test files and prediction codes
+- 【2022/01/19】We upload the source code of YOLO-DoA model
+- 【2022/01/20】We upload test files and prediction codes
   
 # Environments
 
