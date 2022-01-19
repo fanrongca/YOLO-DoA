@@ -15,8 +15,8 @@ TABLE I: The effectiveness study of YOLO-DoA. MPS represents mini-batch per seco
 |D|+ CSP Connection|0.080M|0.332|8.53|2.2°,7.5°|
 |E|+ GIoU Loss|0.080M|0.332|8.23|1.5°,6.5°|
 |F|+ SE Operation|0.081M|0.333|8.08|1.4°,6.2°|
-|G|+ Grid Sensitive|0.081M|0.333|8.08|1.6°,6.5°|
-|H|+ SPP Layer|0.108M|0.397|7.62|1.5°,6.4°|
+|G|+ Grid Sensitive|0.081M|0.333|8.11|1.6°,6.5°|
+|H|+ SPP Layer|0.108M|0.397|8.04|1.5°,6.4°|
 
 Through steps A → F, the construction of YOLO-DoA is completed. Compared to YOLO-Basic, both the parameters and computational cost of YOLO-DoA are reduced by 99.6%.
 Meanwhile, the prediction speed is increased by a factor of 4.6 and RMSE is decreased obviously. Therefore, the effectiveness
