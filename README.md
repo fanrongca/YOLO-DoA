@@ -58,7 +58,7 @@ The results show that these two modules will deteriorate performance of DoA esti
 - backbone.py -- Backbone of YOLO-DoA
 - yolovdoa_test.py -- Be responsible for reading the trained model and test file, outputting the predicted angle and calculating the RMSE
 - Test.tfrecord -- A demonstration test file containing sample and incident directions
-- saved_model.pb is the trained model of YOLO-DoA, "variables" folder contains the trained variables.
+- saved_model.pb -- the trained model of YOLO-DoA, "variables" folder contains the trained variables.
   
 # Test step
 - (1) open the yolovdoa_test.py
