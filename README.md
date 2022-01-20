@@ -63,8 +63,8 @@ The results show that these two modules will deteriorate performance of DoA esti
 # Test step
 - (1) open the yolovdoa_test.py
 - (2) In Line 30, modify the "test_path" to the full path of the test tfrecord file (ie. Test.tfrecord)
-- (3) In Line 31, modify the "saved_model_dir" to the full path where the trained model file (ie. saved_model.pb) is located,
-      and the "variables" folder and  saved_model.pb remain in the same level of file path
+- (3) In Line 31, modify the "saved_model_dir" to the full path where the trained model file (ie. saved_model.pb) is located.
+      Noted that saved_model.pb and the "variables" folder should remain in the same level of file path
 - (4) Run the yolovdoa_test.py
 - (5) The console will print RMSEs at scene ± 85 ° and scene ± 90 °
 - (6) CSV file (ie. predict.csv) containing real and predicted angels is generated in "saved_model_dir"
