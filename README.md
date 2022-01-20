@@ -54,6 +54,16 @@ The results show that these two modules will deteriorate performance of DoA esti
 - computationcost.py-- Parameter statistics and  computational cost statistics function
 - modules.py -- Implementation functions of CBL and Ups
 - backbone.py -- Backbone of YOLO-DoA
+- yolovdoa_test.py -- Be responsible for reading the trained model and test file, outputting the predicted angle and calculating the RMSE
+- Test.tfrecord -- A demonstration test file containing sample and incident directions
+  
+# Test step
+- (1)open the yolovdoa_test.py
+- (2)In Line 30, modify the "test_path" to the full path of the test tfrecord file (ie. Test.tfrecord
+- (3)In Line 31, modify the "saved_model_dir" to the full path where the trained model file (ie. saved_model.pb) is located
+- (4)Run the yolovdoa_test.py
+- (5)The console will print RMSE at scene ± 85 ° and scene ± 90 °
+- (6)CSV file (ie. predict.csv) containing real and predicted angels is generated in "saved_model_dir" and can be used to analyze the prediction  
 # Contact
 Issues should be raised directly in the repository. For professional support requests please email Rong Fan at fanrong@cafuc.edu.cn.
 
