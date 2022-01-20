@@ -44,6 +44,8 @@ The results show that these two modules will deteriorate performance of DoA esti
 - h5py 2.10.0
 
 - numpy 1.19.3
+  
+- pandas 0.25.0
 
 - tensorflow-gpu 1.13.1
 
@@ -64,6 +66,7 @@ The results show that these two modules will deteriorate performance of DoA esti
 - (4) Run the yolovdoa_test.py
 - (5) The console will print RMSE at scene ± 85 ° and scene ± 90 °
 - (6) CSV file (ie. predict.csv) containing real and predicted angels is generated in "saved_model_dir" and can be used to analyze the prediction  
+
 # Contact
 Issues should be raised directly in the repository. For professional support requests please email Rong Fan at fanrong@cafuc.edu.cn.
 
