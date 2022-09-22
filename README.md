@@ -26,7 +26,7 @@ The results show that these two modules will deteriorate performance of DoA esti
 # Updates
 - 【2022/01/19】We upload the source code of YOLO-DoA model
 - 【2022/01/20】We upload test files and prediction code
-- 【2022/09/20】We update some details about files  
+- 【2022/08/20】We update some details about files  
 # Environments
 
 - python 3.8.6
