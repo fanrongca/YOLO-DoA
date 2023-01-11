@@ -23,7 +23,7 @@ Meanwhile, the prediction speed is increased by a factor of 4.6 and RMSE is decr
 of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooling(SPP) layer are additionally tested in the experiment. 
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
 
-In (4), the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
+In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
 The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. More details about cost function is available at https://github.com/fanrongca/YOLO-DoA.
 
 $\text{Loss}(\boldsymbol{\bf{\chi}},\hat{\boldsymbol{\bf{\chi}}})$ is expressed as
@@ -39,15 +39,17 @@ $$\begin{equation}
 where $S$ and $P$ are the total number of SubRegs and MicroRegs, respectively.
 where the first two terms are the confidence loss, and the latter is the regression loss. $\gamma$ is the weighted factor.
 
-If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bounding boxes are less than threshold value $\tau$,The $\vartheta _{i,j}^{\text{nobj}}$ is 1,Otherwise $\vartheta _{i,j}^{\text{nobj}}$ is 0.
+If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bounding boxes are less than threshold value $\tau$,the $\vartheta _{i,j}^{\text{nobj}}$ is 1,Otherwise $\vartheta _{i,j}^{\text{nobj}}$ is 0.
   
  ${\lambda}_{\text{coord}}$ is the penalty factor of regression loss.
  
 A. Parameters Selection for Data Labeling
   
-  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of softNMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2◦.
-![1](https://user-images.githubusercontent.com/46212148/211855860-ae04674f-360b-4cf2-be46-5100aee427a5.png)
-
+  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2◦.
+  
+![2](https://user-images.githubusercontent.com/46212148/211857230-47a67ff9-cc01-4bcc-aeab-0e4857ad89b5.png)
+  
+Moreover, the number of MicroRegs P can also affect the accuracy of DoA estimation. We further evaluate the RMSE versus P given SNR = 9 dB and W = 2°, the results of which are shown in Fig(b). We can see that P = 3 is optimal.That’s because when too few MicroRegs are utilized, the sources with small spatial spacing cannot be separated rightly.Instead, too many MicroRegs will produce more redundant predicted boxes, which also reduces the effectiveness of soft-NMS.
   
 # Updates
 - 【2022/01/19】We upload the source code of YOLO-DoA model
