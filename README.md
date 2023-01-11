@@ -42,6 +42,12 @@ where the first two terms are the confidence loss, and the latter is the regress
 If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bounding boxes are less than threshold value $\tau$,The $\vartheta _{i,j}^{\text{nobj}}$ is 1,Otherwise $\vartheta _{i,j}^{\text{nobj}}$ is 0.
   
  ${\lambda}_{\text{coord}}$ is the penalty factor of regression loss.
+ 
+A. Parameters Selection for Data Labeling
+  
+  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of softNMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2◦.
+![1](https://user-images.githubusercontent.com/46212148/211855860-ae04674f-360b-4cf2-be46-5100aee427a5.png)
+
   
 # Updates
 - 【2022/01/19】We upload the source code of YOLO-DoA model
