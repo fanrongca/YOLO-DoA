@@ -23,6 +23,28 @@ Meanwhile, the prediction speed is increased by a factor of 4.6 and RMSE is decr
 of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooling(SPP) layer are additionally tested in the experiment. 
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
 
+In (4), the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
+The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. More details about cost function is available at https://github.com/fanrongca/YOLO-DoA.
+
+$\text{Loss}(\boldsymbol{\bf{\chi}},\hat{\boldsymbol{\bf{\chi}}})$ is expressed as
+
+$$\begin{equation}
+\begin{aligned}
+& \text{Loss}(\boldsymbol{\bf{\chi}},\hat{\boldsymbol{\bf{\chi}}})= -\sum\limits_{i=1}^{S}{\sum\limits_{j=1}^{P}{{\text{(1-$\boldsymbol{\bf{\hat{\chi}}}^{i,j,5})^{\gamma}$}}\text{$\boldsymbol{\bf{\chi}}^{i,j,5}$} \text{log} \zeta{(\text{$\boldsymbol{\bf{\hat{\chi}}}^{i,j,5}$})}}} \\
+& -\sum\limits_{i=1}^{S}{\sum\limits_{j=1}^{P}{\mathbb{I}_{i,j}^{\text{nobj}}{\text{(1-$\boldsymbol{\bf{\hat{\chi}}}^{i,j,5})^{\gamma}$}} \text{log} (1-\text{$\zeta{(\boldsymbol{\bf{\hat{\chi}}}^{i,j,5}}$}))}} \\
+& +{{\lambda}_{\text{coord}}}\sum\limits_{i=1}^{S}{\sum\limits_{j=1}^{P}{\boldsymbol{\bf{\chi}}^{i,j,5} (1-\text{GIoU($\boldsymbol{\bf{\chi}}^{i,j,1:4}$, $\hat{\boldsymbol{\bf{\chi}}}^{i,j,1:4}$)}})} \\
+\end{aligned}
+\end{equation}$$
+
+where $S$ and $P$ are the total number of SubRegs and MicroRegs, respectively.
+where the first two terms are the confidence loss, and the latter is the regression loss. $\gamma$ is the weighted factor.
+If GIoU ratios between the predicted box $\hat{box}_{i,j}$ and all of the bounding boxes are less than threshold value $\tau$,
+the $\mathbb{I}_{i,j}^{\text{nobj}}$ is 1, Otherwise $\mathbb{I}_{i,j}^{\text{nobj}} =0$. ${{\lambda }_{\text{coord}}}$ is the penalty factor of regression loss.
+
+
+  
+  
+  
 # Updates
 - 【2022/01/19】We upload the source code of YOLO-DoA model
 - 【2022/01/20】We upload test files and prediction code
