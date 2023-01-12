@@ -24,7 +24,7 @@ of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooli
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
 
 In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
-The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. More details about cost function is available at https://github.com/fanrongca/YOLO-DoA.
+The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. 
 
 $\text{Loss}(\boldsymbol{\bf{\chi}},\hat{\boldsymbol{\bf{\chi}}})$ is expressed as
 
@@ -43,8 +43,6 @@ If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bo
   
  ${\lambda}_{\text{coord}}$ is the penalty factor of regression loss.
  
-A. Parameters Selection for Data Labeling
-  
   The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2◦.
   
 ![2](https://user-images.githubusercontent.com/46212148/211857230-47a67ff9-cc01-4bcc-aeab-0e4857ad89b5.png)
