@@ -36,8 +36,7 @@ $$\begin{equation}
 \end{aligned}
 \end{equation}$$
 
-where $S$ and $P$ are the total number of SubRegs and MicroRegs, respectively.
-where the first two terms are the confidence loss, and the latter is the regression loss. $\gamma$ is the weighted factor.
+where $S$ and $P$ are the total number of SubRegs and MicroRegs, respectively. The first two terms are the confidence loss, and the latter is the regression loss. $\gamma$ is the weighted factor.
 
 If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bounding boxes are less than threshold value $\tau$,the $\vartheta _{i,j}^{\text{nobj}}$ is 1,Otherwise $\vartheta _{i,j}^{\text{nobj}}$ is 0.
   
