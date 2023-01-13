@@ -22,6 +22,27 @@ Through steps A → F, the construction of YOLO-DoA is completed. Compared to YO
 Meanwhile, the prediction speed is increased by a factor of 4.6 and RMSE is decreased obviously. Therefore, the effectiveness
 of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooling(SPP) layer are additionally tested in the experiment. 
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
+  
+  Fig. 1: The block diagram of the YOLO-DoA, CSR modules from left to right in Backbone are recorded as CSR1 to CSR4, CBF modules in Neck are recorded as CBF1 to CBF3 from top to bottom, and UPS modules in Neck are recorded as UPS1 to CBF2 from top to bottom.
+  ![3](https://user-images.githubusercontent.com/46212148/212353576-3ca6231c-cbfb-40d3-8a3f-260cd7e53109.png)
+  
+  TABLE 2：Implementation details of each module in YOLO-DOA
+  
+|Type |Notation |Input |Output |
+|--- |---  |---  |---    |
+|CRB|7x1,8|192x1x1|192x1x8|
+|Maxpooling|3x1,8|192x1x8|96x1x8|
+|CSR1|(in,out)=(8,16)|96x1x8|48x1x16|
+|CSR2|(in,out)=(16,32)|48x1x16|24x1x32|
+|CSR3|(in,out)=(32,64)|24x1x32|12x1x64|
+|CSR4|(in,out)=(64,64)|12x1x64|6x1x64|
+|CBF1|in=32|6x1x80|6x1x32|
+|UPS1| |6x1x32|12x1x16|
+|CBF2|in=32|12x1x48|12x1x32|
+|UPS2| |12x1x32|24x1x16|
+|CBF3|in=16|24x1x32|24x1x16|
+|Head| |24x1x16|24x1x15|
+  
 
 In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
 The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. 
