@@ -24,10 +24,10 @@ of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooli
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
 
  ## YOLO-DoA Design 
-  Fig. 1: The block diagram of the YOLO-DoA, CSR modules from left to right in Backbone are recorded as CSR1 to CSR4, CBF modules in Neck are recorded as CBF1 to CBF3 from top to bottom, and UPS modules in Neck are recorded as UPS1 to UPS2 from top to bottom.
+  Fig. 1: The block diagram of the YOLO-DoA  and the implementation details of SR, CSR, CBR, CBL, CBF, UPS and Head module.
   ![3](https://user-images.githubusercontent.com/46212148/212353576-3ca6231c-cbfb-40d3-8a3f-260cd7e53109.png)
   
-  TABLE 2：Implementation details of each module in YOLO-DOA
+  TABLE 2：Implementation details of each module in YOLO-DOA. CSR modules from left to right in BackBone are recorded as CSR1 to CSR4, CBF modules in Neck are recorded as CBF1 to CBF3 from top to bottom, and UPS modules in Neck are recorded as UPS1 to UPS2 from top to bottom.
   
 |Type |Notation |Input |Output |
 |--- |---  |---  |---    |
@@ -74,7 +74,8 @@ Moreover, the number of MicroRegs P can also affect the accuracy of DoA estimati
 # Updates
 - 【2022/01/19】We upload the source code of YOLO-DoA model
 - 【2022/01/20】We upload test files and prediction code
-- 【2022/08/20】We update some details about files  
+- 【2022/08/20】We update some details about files 
+- 【2023/01/15】We update some details about loss function and added experiment  
 # Environments
 
 - python 3.8.6
