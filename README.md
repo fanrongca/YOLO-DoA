@@ -31,18 +31,18 @@ The results show that these two modules will deteriorate performance of DoA esti
   
 |Type |Notation |Input |Output |
 |--- |---  |---  |---    |
-|CRB|7x1,8|192x1x1|192x1x8|
-|Maxpooling|3x1,8|192x1x8|96x1x8|
-|CSR1|(in,out)=(8,16)|96x1x8|48x1x16|
-|CSR2|(in,out)=(16,32)|48x1x16|24x1x32|
-|CSR3|(in,out)=(32,64)|24x1x32|12x1x64|
-|CSR4|(in,out)=(64,64)|12x1x64|6x1x64|
-|CBF1|in=32|6x1x80|6x1x32|
-|UPS1| |6x1x32|12x1x16|
-|CBF2|in=32|12x1x48|12x1x32|
-|UPS2| |12x1x32|24x1x16|
-|CBF3|in=16|24x1x32|24x1x16|
-|Head| |24x1x16|24x1x15|
+|CRB|7×1,8|192×1×1|192×1×8|
+|Maxpooling|3×1,8|192×1×8|96×1×8|
+|CSR1|(in,out)=(8,16)|96×1×8|48×1×16|
+|CSR2|(in,out)=(16,32)|48×1×16|24×1×32|
+|CSR3|(in,out)=(32,64)|24×1×32|12×1×64|
+|CSR4|(in,out)=(64,64)|12×1×64|6×1×64|
+|CBF1|in=32|6×1×64|6×1×32|
+|UPS1| |6×1×32|12×1×16|
+|CBF2|in=32|12×1×48|12×1×32|
+|UPS2| |12×1×32|24×1×16|
+|CBF3|in=16|24×1×32|24×1×16|
+|Head| |24×1×16|24×1×15|
   
 ## Loss Function
 In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
