@@ -1,5 +1,5 @@
 # YOLO-DoA
-# Introduction
+## The Effectiveness Verification of YOLO-DoA
 
 YOLO-DoA is an efficient YOLOv3-based approach for DoA estimation, which is implemented as a regression task to spatially separated angular boxes. DoAs of sources with confidence scores
 are directly predicted from the spectrum proxy with YOLO-DoA and an end-to-end estimation is realized. 
@@ -22,7 +22,8 @@ Through steps A → F, the construction of YOLO-DoA is completed. Compared to YO
 Meanwhile, the prediction speed is increased by a factor of 4.6 and RMSE is decreased obviously. Therefore, the effectiveness
 of YOLO-DoA is confirmed. Moreover, the Grid Sensitive and Spatial Pyramid Pooling(SPP) layer are additionally tested in the experiment. 
 The results show that these two modules will deteriorate performance of DoA estimation, hence they are not adopted in YOLO-DoA.
-  
+
+ ## YOLO-DoA Design 
   Fig. 1: The block diagram of the YOLO-DoA, CSR modules from left to right in Backbone are recorded as CSR1 to CSR4, CBF modules in Neck are recorded as CBF1 to CBF3 from top to bottom, and UPS modules in Neck are recorded as UPS1 to CBF2 from top to bottom.
   ![3](https://user-images.githubusercontent.com/46212148/212353576-3ca6231c-cbfb-40d3-8a3f-260cd7e53109.png)
   
@@ -43,7 +44,7 @@ The results show that these two modules will deteriorate performance of DoA esti
 |CBF3|in=16|24x1x32|24x1x16|
 |Head| |24x1x16|24x1x15|
   
-
+## Loss Function
 In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
 The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. 
 
@@ -63,6 +64,7 @@ If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bo
   
  ${\lambda}_{\text{coord}}$ is the penalty factor of regression loss.
  
+ ## Parameters Selection for Data Labeling
   The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2◦.
   
 ![2](https://user-images.githubusercontent.com/46212148/211857230-47a67ff9-cc01-4bcc-aeab-0e4857ad89b5.png)
