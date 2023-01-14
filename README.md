@@ -65,7 +65,7 @@ If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bo
  ${\lambda}_{\text{coord}}$ is the penalty factor of regression loss.
  
  ## Parameters Selection for Data Labeling
-  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2◦.
+  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2°.
   
 ![2](https://user-images.githubusercontent.com/46212148/211857230-47a67ff9-cc01-4bcc-aeab-0e4857ad89b5.png)
   
