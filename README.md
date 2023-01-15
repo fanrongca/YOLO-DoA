@@ -45,10 +45,9 @@ The results show that these two modules will deteriorate performance of DoA esti
 |Head| |24×1×16|24×1×15|
   
 ## Loss Function
-In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
+In the following equation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
 The regression loss of YOLOv3 is replaced with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. 
-
-$\text{Loss}(\boldsymbol{\bf{\chi}},\hat{\boldsymbol{\bf{\chi}}})$ is expressed as
+The loss function is expressed as
 
 $$\begin{equation}
 \begin{aligned}
@@ -60,22 +59,24 @@ $$\begin{equation}
 
 where $S$ and $P$ are the total number of SubRegs and MicroRegs, respectively. The first two terms are the confidence loss, and the latter is the regression loss. $\gamma$ is the weighted factor.
 
-If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bounding boxes are less than threshold value $\tau$,the $\vartheta _{i,j}^{\text{nobj}}$ is 1,Otherwise $\vartheta _{i,j}^{\text{nobj}}$ is 0.
+If GIoU ratios between the predicted box $b\hat{o}{{x}_{i,j}}$ and all of the bounding boxes are less than threshold value, the $\vartheta _{i,j}^{\text{nobj}}$ is 1,Otherwise $\vartheta _{i,j}^{\text{nobj}}$ is 0.
   
  ${\lambda}_{\text{coord}}$ is the penalty factor of regression loss.
  
  ## Parameters Selection for Data Labeling
-  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in the following picture, we can see that the optimal value of W is 2°.
-  
-![2](https://user-images.githubusercontent.com/46212148/211857230-47a67ff9-cc01-4bcc-aeab-0e4857ad89b5.png)
-  
-Moreover, the number of MicroRegs P can also affect the accuracy of DoA estimation. We further evaluate the RMSE versus P given SNR = 9 dB and W = 2°, the results of which are shown in Fig(b). We can see that P = 3 is optimal.That’s because when too few MicroRegs are utilized, the sources with small spatial spacing cannot be separated rightly.Instead, too many MicroRegs will produce more redundant predicted boxes, which also reduces the effectiveness of soft-NMS.
-  
+  The width of bounding box W can affect the accuracy of DoA estimation. When W is too large, more irrelevant features are imposed during the training, which hinders the learning of angular features. On the contrary, multiple predicted boxes with approximated confidence scores are generated for the same incident direction, which reduce the effectiveness of soft-NMS. Hence, we evaluate the RMSE of YOLO-DoA with respect to W given SNR = 9 dB and P = 3. As shown in results of the subplot (a) of
+the following figure, we can see that the optimal value of W is 2°.
+ 
+Moreover, the number of MicroRegs P can also affect the accuracy of DoA estimation. We further evaluate the RMSE versus P given SNR = 9 dB and W = 2°, the
+results of which are shown in the subplot (b) of the following figure. We can see that P = 3 is optimal.That’s because when too few MicroRegs are utilized, the sources with small spatial spacing cannot be separated rightly. Instead, too many MicroRegs will produce more redundant predicted boxes, which also reduces the effectiveness of soft-NMS.
+ 
+ ![2](https://user-images.githubusercontent.com/46212148/211857230-47a67ff9-cc01-4bcc-aeab-0e4857ad89b5.png)
 # Updates
+ 
 - 【2022/01/19】We upload the source code of YOLO-DoA model
 - 【2022/01/20】We upload test files and prediction code
 - 【2022/08/20】We update some details about files 
-- 【2023/01/15】We update some details about loss function and added experiment  
+- 【2023/01/15】We update some details about loss function, network structure and added experiment  
 # Environments
 
 - python 3.8.6
