@@ -46,7 +46,7 @@ The results show that these two modules will deteriorate performance of DoA esti
   
 ## Loss Function
 In the following formulation, the loss function is composed of confidence loss and regression loss. The weighted cross-entropy function is adopted as confidence loss.
-The regression loss of YOLOv3 is replace with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. 
+The regression loss of YOLOv3 is replaced with the generalized intersection over union (GIoU) function between $box_{i, j}$ and the predicted boxes $\hat{box}_{i, j}$. 
 
 $\text{Loss}(\boldsymbol{\bf{\chi}},\hat{\boldsymbol{\bf{\chi}}})$ is expressed as
 
