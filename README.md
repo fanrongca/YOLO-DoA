@@ -27,7 +27,7 @@ The results show that these two modules will deteriorate performance of DoA esti
   Fig. 1: The block diagram of the YOLO-DoA  and the implementation details of SR, CSR, CBR, CBL, CBF, UPS and Head module.
   ![3](https://user-images.githubusercontent.com/46212148/212353576-3ca6231c-cbfb-40d3-8a3f-260cd7e53109.png)
   
-  TABLE 2：Implementation details of each module in YOLO-DOA. CSR modules from left to right in BackBone are recorded as CSR1 to CSR4, CBF modules in Neck are recorded as CBF1 to CBF3 from top to bottom, and UPS modules in Neck are recorded as UPS1 to UPS2 from top to bottom.
+  TABLE 2：Implementation details of each module in YOLO-DOA. For simplicity, CSR modules from left to right in BackBone are recorded as CSR1 to CSR4, CBF modules in Neck are recorded as CBF1 to CBF3 from top to bottom, and UPS modules in Neck are recorded as UPS1 to UPS2 from top to bottom.
   
 |Type |Notation |Input |Output |
 |--- |---  |---  |---    |
